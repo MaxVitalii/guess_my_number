@@ -1,0 +1,32 @@
+{
+  "name": "guess_my_number",
+  "version": "1.0.0",
+  "description": "Application for learning DOM manipulation",
+  "main": "script.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
+    "comress:css": "node-sass css/style.prefix.css css/style.css --output-style comressed",
+    "build:css": "npm-run-all compile:sass prefix:css comress:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaxVitalii/guess_my_number.git"
+  },
+  "author": "Vitalii Maksymenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaxVitalii/guess_my_number/issues"
+  },
+  "homepage": "https://github.com/MaxVitalii/guess_my_number#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "concat": "^1.0.3",
+    "node-sass": "^9.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^10.1.0"
+  }
+}
